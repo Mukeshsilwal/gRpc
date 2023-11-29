@@ -16,28 +16,28 @@ public final class ProjectServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<proto.ProjectOuterClass.ProjectRequest,
-      proto.ProjectOuterClass.Project> getGetProjectMethod;
+      proto.ProjectOuterClass.ProjectResponse> getGetProjectMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getProject",
       requestType = proto.ProjectOuterClass.ProjectRequest.class,
-      responseType = proto.ProjectOuterClass.Project.class,
+      responseType = proto.ProjectOuterClass.ProjectResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<proto.ProjectOuterClass.ProjectRequest,
-      proto.ProjectOuterClass.Project> getGetProjectMethod() {
-    io.grpc.MethodDescriptor<proto.ProjectOuterClass.ProjectRequest, proto.ProjectOuterClass.Project> getGetProjectMethod;
+      proto.ProjectOuterClass.ProjectResponse> getGetProjectMethod() {
+    io.grpc.MethodDescriptor<proto.ProjectOuterClass.ProjectRequest, proto.ProjectOuterClass.ProjectResponse> getGetProjectMethod;
     if ((getGetProjectMethod = ProjectServiceGrpc.getGetProjectMethod) == null) {
       synchronized (ProjectServiceGrpc.class) {
         if ((getGetProjectMethod = ProjectServiceGrpc.getGetProjectMethod) == null) {
           ProjectServiceGrpc.getGetProjectMethod = getGetProjectMethod =
-              io.grpc.MethodDescriptor.<proto.ProjectOuterClass.ProjectRequest, proto.ProjectOuterClass.Project>newBuilder()
+              io.grpc.MethodDescriptor.<proto.ProjectOuterClass.ProjectRequest, proto.ProjectOuterClass.ProjectResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getProject"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   proto.ProjectOuterClass.ProjectRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  proto.ProjectOuterClass.Project.getDefaultInstance()))
+                  proto.ProjectOuterClass.ProjectResponse.getDefaultInstance()))
               .setSchemaDescriptor(new ProjectServiceMethodDescriptorSupplier("getProject"))
               .build();
         }
@@ -109,28 +109,28 @@ public final class ProjectServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<proto.ProjectOuterClass.Project,
-      proto.ProjectOuterClass.Project> getUpdateProjectMethod;
+      proto.ProjectOuterClass.ProjectResponse> getUpdateProjectMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "updateProject",
       requestType = proto.ProjectOuterClass.Project.class,
-      responseType = proto.ProjectOuterClass.Project.class,
+      responseType = proto.ProjectOuterClass.ProjectResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<proto.ProjectOuterClass.Project,
-      proto.ProjectOuterClass.Project> getUpdateProjectMethod() {
-    io.grpc.MethodDescriptor<proto.ProjectOuterClass.Project, proto.ProjectOuterClass.Project> getUpdateProjectMethod;
+      proto.ProjectOuterClass.ProjectResponse> getUpdateProjectMethod() {
+    io.grpc.MethodDescriptor<proto.ProjectOuterClass.Project, proto.ProjectOuterClass.ProjectResponse> getUpdateProjectMethod;
     if ((getUpdateProjectMethod = ProjectServiceGrpc.getUpdateProjectMethod) == null) {
       synchronized (ProjectServiceGrpc.class) {
         if ((getUpdateProjectMethod = ProjectServiceGrpc.getUpdateProjectMethod) == null) {
           ProjectServiceGrpc.getUpdateProjectMethod = getUpdateProjectMethod =
-              io.grpc.MethodDescriptor.<proto.ProjectOuterClass.Project, proto.ProjectOuterClass.Project>newBuilder()
+              io.grpc.MethodDescriptor.<proto.ProjectOuterClass.Project, proto.ProjectOuterClass.ProjectResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "updateProject"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   proto.ProjectOuterClass.Project.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  proto.ProjectOuterClass.Project.getDefaultInstance()))
+                  proto.ProjectOuterClass.ProjectResponse.getDefaultInstance()))
               .setSchemaDescriptor(new ProjectServiceMethodDescriptorSupplier("updateProject"))
               .build();
         }
@@ -190,7 +190,7 @@ public final class ProjectServiceGrpc {
     /**
      */
     default void getProject(proto.ProjectOuterClass.ProjectRequest request,
-        io.grpc.stub.StreamObserver<proto.ProjectOuterClass.Project> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.ProjectOuterClass.ProjectResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetProjectMethod(), responseObserver);
     }
 
@@ -211,7 +211,7 @@ public final class ProjectServiceGrpc {
     /**
      */
     default void updateProject(proto.ProjectOuterClass.Project request,
-        io.grpc.stub.StreamObserver<proto.ProjectOuterClass.Project> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.ProjectOuterClass.ProjectResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateProjectMethod(), responseObserver);
     }
   }
@@ -246,7 +246,7 @@ public final class ProjectServiceGrpc {
     /**
      */
     public void getProject(proto.ProjectOuterClass.ProjectRequest request,
-        io.grpc.stub.StreamObserver<proto.ProjectOuterClass.Project> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.ProjectOuterClass.ProjectResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetProjectMethod(), getCallOptions()), request, responseObserver);
     }
@@ -270,7 +270,7 @@ public final class ProjectServiceGrpc {
     /**
      */
     public void updateProject(proto.ProjectOuterClass.Project request,
-        io.grpc.stub.StreamObserver<proto.ProjectOuterClass.Project> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.ProjectOuterClass.ProjectResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateProjectMethod(), getCallOptions()), request, responseObserver);
     }
@@ -294,7 +294,7 @@ public final class ProjectServiceGrpc {
 
     /**
      */
-    public proto.ProjectOuterClass.Project getProject(proto.ProjectOuterClass.ProjectRequest request) {
+    public proto.ProjectOuterClass.ProjectResponse getProject(proto.ProjectOuterClass.ProjectRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetProjectMethod(), getCallOptions(), request);
     }
@@ -315,7 +315,7 @@ public final class ProjectServiceGrpc {
 
     /**
      */
-    public proto.ProjectOuterClass.Project updateProject(proto.ProjectOuterClass.Project request) {
+    public proto.ProjectOuterClass.ProjectResponse updateProject(proto.ProjectOuterClass.Project request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateProjectMethod(), getCallOptions(), request);
     }
@@ -339,7 +339,7 @@ public final class ProjectServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<proto.ProjectOuterClass.Project> getProject(
+    public com.google.common.util.concurrent.ListenableFuture<proto.ProjectOuterClass.ProjectResponse> getProject(
         proto.ProjectOuterClass.ProjectRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetProjectMethod(), getCallOptions()), request);
@@ -363,7 +363,7 @@ public final class ProjectServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<proto.ProjectOuterClass.Project> updateProject(
+    public com.google.common.util.concurrent.ListenableFuture<proto.ProjectOuterClass.ProjectResponse> updateProject(
         proto.ProjectOuterClass.Project request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateProjectMethod(), getCallOptions()), request);
@@ -394,7 +394,7 @@ public final class ProjectServiceGrpc {
       switch (methodId) {
         case METHODID_GET_PROJECT:
           serviceImpl.getProject((proto.ProjectOuterClass.ProjectRequest) request,
-              (io.grpc.stub.StreamObserver<proto.ProjectOuterClass.Project>) responseObserver);
+              (io.grpc.stub.StreamObserver<proto.ProjectOuterClass.ProjectResponse>) responseObserver);
           break;
         case METHODID_ADD_PROJECT:
           serviceImpl.addProject((proto.ProjectOuterClass.Project) request,
@@ -406,7 +406,7 @@ public final class ProjectServiceGrpc {
           break;
         case METHODID_UPDATE_PROJECT:
           serviceImpl.updateProject((proto.ProjectOuterClass.Project) request,
-              (io.grpc.stub.StreamObserver<proto.ProjectOuterClass.Project>) responseObserver);
+              (io.grpc.stub.StreamObserver<proto.ProjectOuterClass.ProjectResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -431,7 +431,7 @@ public final class ProjectServiceGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               proto.ProjectOuterClass.ProjectRequest,
-              proto.ProjectOuterClass.Project>(
+              proto.ProjectOuterClass.ProjectResponse>(
                 service, METHODID_GET_PROJECT)))
         .addMethod(
           getAddProjectMethod(),
@@ -452,7 +452,7 @@ public final class ProjectServiceGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               proto.ProjectOuterClass.Project,
-              proto.ProjectOuterClass.Project>(
+              proto.ProjectOuterClass.ProjectResponse>(
                 service, METHODID_UPDATE_PROJECT)))
         .build();
   }

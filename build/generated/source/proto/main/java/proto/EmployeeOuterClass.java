@@ -48,18 +48,6 @@ public final class EmployeeOuterClass {
      */
     com.google.protobuf.ByteString
         getEmailBytes();
-
-    /**
-     * <code>int32 department_id = 4;</code>
-     * @return The departmentId.
-     */
-    int getDepartmentId();
-
-    /**
-     * <code>int32 project_id = 5;</code>
-     * @return The projectId.
-     */
-    int getProjectId();
   }
   /**
    * Protobuf type {@code proto.Employee}
@@ -187,28 +175,6 @@ public final class EmployeeOuterClass {
       }
     }
 
-    public static final int DEPARTMENT_ID_FIELD_NUMBER = 4;
-    private int departmentId_ = 0;
-    /**
-     * <code>int32 department_id = 4;</code>
-     * @return The departmentId.
-     */
-    @java.lang.Override
-    public int getDepartmentId() {
-      return departmentId_;
-    }
-
-    public static final int PROJECT_ID_FIELD_NUMBER = 5;
-    private int projectId_ = 0;
-    /**
-     * <code>int32 project_id = 5;</code>
-     * @return The projectId.
-     */
-    @java.lang.Override
-    public int getProjectId() {
-      return projectId_;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -232,12 +198,6 @@ public final class EmployeeOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
       }
-      if (departmentId_ != 0) {
-        output.writeInt32(4, departmentId_);
-      }
-      if (projectId_ != 0) {
-        output.writeInt32(5, projectId_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -256,14 +216,6 @@ public final class EmployeeOuterClass {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
-      }
-      if (departmentId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, departmentId_);
-      }
-      if (projectId_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, projectId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -286,10 +238,6 @@ public final class EmployeeOuterClass {
           .equals(other.getName())) return false;
       if (!getEmail()
           .equals(other.getEmail())) return false;
-      if (getDepartmentId()
-          != other.getDepartmentId()) return false;
-      if (getProjectId()
-          != other.getProjectId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -307,10 +255,6 @@ public final class EmployeeOuterClass {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
-      hash = (37 * hash) + DEPARTMENT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDepartmentId();
-      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getProjectId();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -445,8 +389,6 @@ public final class EmployeeOuterClass {
         id_ = 0;
         name_ = "";
         email_ = "";
-        departmentId_ = 0;
-        projectId_ = 0;
         return this;
       }
 
@@ -488,12 +430,6 @@ public final class EmployeeOuterClass {
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.email_ = email_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.departmentId_ = departmentId_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.projectId_ = projectId_;
         }
       }
 
@@ -554,12 +490,6 @@ public final class EmployeeOuterClass {
           bitField0_ |= 0x00000004;
           onChanged();
         }
-        if (other.getDepartmentId() != 0) {
-          setDepartmentId(other.getDepartmentId());
-        }
-        if (other.getProjectId() != 0) {
-          setProjectId(other.getProjectId());
-        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -601,16 +531,6 @@ public final class EmployeeOuterClass {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-              case 32: {
-                departmentId_ = input.readInt32();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 40: {
-                projectId_ = input.readInt32();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 40
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -800,70 +720,6 @@ public final class EmployeeOuterClass {
         checkByteStringIsUtf8(value);
         email_ = value;
         bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-
-      private int departmentId_ ;
-      /**
-       * <code>int32 department_id = 4;</code>
-       * @return The departmentId.
-       */
-      @java.lang.Override
-      public int getDepartmentId() {
-        return departmentId_;
-      }
-      /**
-       * <code>int32 department_id = 4;</code>
-       * @param value The departmentId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDepartmentId(int value) {
-
-        departmentId_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 department_id = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDepartmentId() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        departmentId_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int projectId_ ;
-      /**
-       * <code>int32 project_id = 5;</code>
-       * @return The projectId.
-       */
-      @java.lang.Override
-      public int getProjectId() {
-        return projectId_;
-      }
-      /**
-       * <code>int32 project_id = 5;</code>
-       * @param value The projectId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setProjectId(int value) {
-
-        projectId_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 project_id = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearProjectId() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        projectId_ = 0;
         onChanged();
         return this;
       }
@@ -1954,6 +1810,1536 @@ public final class EmployeeOuterClass {
 
     @java.lang.Override
     public proto.EmployeeOuterClass.saveEmployeeResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface saveEmployeeWithDepartmentAndProjectOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:proto.saveEmployeeWithDepartmentAndProject)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .proto.Employee employee = 1;</code>
+     */
+    java.util.List<proto.EmployeeOuterClass.Employee> 
+        getEmployeeList();
+    /**
+     * <code>repeated .proto.Employee employee = 1;</code>
+     */
+    proto.EmployeeOuterClass.Employee getEmployee(int index);
+    /**
+     * <code>repeated .proto.Employee employee = 1;</code>
+     */
+    int getEmployeeCount();
+    /**
+     * <code>repeated .proto.Employee employee = 1;</code>
+     */
+    java.util.List<? extends proto.EmployeeOuterClass.EmployeeOrBuilder> 
+        getEmployeeOrBuilderList();
+    /**
+     * <code>repeated .proto.Employee employee = 1;</code>
+     */
+    proto.EmployeeOuterClass.EmployeeOrBuilder getEmployeeOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .proto.Department department = 2;</code>
+     */
+    java.util.List<proto.DepartmentOuterClass.Department> 
+        getDepartmentList();
+    /**
+     * <code>repeated .proto.Department department = 2;</code>
+     */
+    proto.DepartmentOuterClass.Department getDepartment(int index);
+    /**
+     * <code>repeated .proto.Department department = 2;</code>
+     */
+    int getDepartmentCount();
+    /**
+     * <code>repeated .proto.Department department = 2;</code>
+     */
+    java.util.List<? extends proto.DepartmentOuterClass.DepartmentOrBuilder> 
+        getDepartmentOrBuilderList();
+    /**
+     * <code>repeated .proto.Department department = 2;</code>
+     */
+    proto.DepartmentOuterClass.DepartmentOrBuilder getDepartmentOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .proto.Project project = 3;</code>
+     */
+    java.util.List<proto.ProjectOuterClass.Project> 
+        getProjectList();
+    /**
+     * <code>repeated .proto.Project project = 3;</code>
+     */
+    proto.ProjectOuterClass.Project getProject(int index);
+    /**
+     * <code>repeated .proto.Project project = 3;</code>
+     */
+    int getProjectCount();
+    /**
+     * <code>repeated .proto.Project project = 3;</code>
+     */
+    java.util.List<? extends proto.ProjectOuterClass.ProjectOrBuilder> 
+        getProjectOrBuilderList();
+    /**
+     * <code>repeated .proto.Project project = 3;</code>
+     */
+    proto.ProjectOuterClass.ProjectOrBuilder getProjectOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code proto.saveEmployeeWithDepartmentAndProject}
+   */
+  public static final class saveEmployeeWithDepartmentAndProject extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:proto.saveEmployeeWithDepartmentAndProject)
+      saveEmployeeWithDepartmentAndProjectOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use saveEmployeeWithDepartmentAndProject.newBuilder() to construct.
+    private saveEmployeeWithDepartmentAndProject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private saveEmployeeWithDepartmentAndProject() {
+      employee_ = java.util.Collections.emptyList();
+      department_ = java.util.Collections.emptyList();
+      project_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new saveEmployeeWithDepartmentAndProject();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return proto.EmployeeOuterClass.internal_static_proto_saveEmployeeWithDepartmentAndProject_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return proto.EmployeeOuterClass.internal_static_proto_saveEmployeeWithDepartmentAndProject_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject.class, proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject.Builder.class);
+    }
+
+    public static final int EMPLOYEE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<proto.EmployeeOuterClass.Employee> employee_;
+    /**
+     * <code>repeated .proto.Employee employee = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<proto.EmployeeOuterClass.Employee> getEmployeeList() {
+      return employee_;
+    }
+    /**
+     * <code>repeated .proto.Employee employee = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends proto.EmployeeOuterClass.EmployeeOrBuilder> 
+        getEmployeeOrBuilderList() {
+      return employee_;
+    }
+    /**
+     * <code>repeated .proto.Employee employee = 1;</code>
+     */
+    @java.lang.Override
+    public int getEmployeeCount() {
+      return employee_.size();
+    }
+    /**
+     * <code>repeated .proto.Employee employee = 1;</code>
+     */
+    @java.lang.Override
+    public proto.EmployeeOuterClass.Employee getEmployee(int index) {
+      return employee_.get(index);
+    }
+    /**
+     * <code>repeated .proto.Employee employee = 1;</code>
+     */
+    @java.lang.Override
+    public proto.EmployeeOuterClass.EmployeeOrBuilder getEmployeeOrBuilder(
+        int index) {
+      return employee_.get(index);
+    }
+
+    public static final int DEPARTMENT_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private java.util.List<proto.DepartmentOuterClass.Department> department_;
+    /**
+     * <code>repeated .proto.Department department = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<proto.DepartmentOuterClass.Department> getDepartmentList() {
+      return department_;
+    }
+    /**
+     * <code>repeated .proto.Department department = 2;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends proto.DepartmentOuterClass.DepartmentOrBuilder> 
+        getDepartmentOrBuilderList() {
+      return department_;
+    }
+    /**
+     * <code>repeated .proto.Department department = 2;</code>
+     */
+    @java.lang.Override
+    public int getDepartmentCount() {
+      return department_.size();
+    }
+    /**
+     * <code>repeated .proto.Department department = 2;</code>
+     */
+    @java.lang.Override
+    public proto.DepartmentOuterClass.Department getDepartment(int index) {
+      return department_.get(index);
+    }
+    /**
+     * <code>repeated .proto.Department department = 2;</code>
+     */
+    @java.lang.Override
+    public proto.DepartmentOuterClass.DepartmentOrBuilder getDepartmentOrBuilder(
+        int index) {
+      return department_.get(index);
+    }
+
+    public static final int PROJECT_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private java.util.List<proto.ProjectOuterClass.Project> project_;
+    /**
+     * <code>repeated .proto.Project project = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<proto.ProjectOuterClass.Project> getProjectList() {
+      return project_;
+    }
+    /**
+     * <code>repeated .proto.Project project = 3;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends proto.ProjectOuterClass.ProjectOrBuilder> 
+        getProjectOrBuilderList() {
+      return project_;
+    }
+    /**
+     * <code>repeated .proto.Project project = 3;</code>
+     */
+    @java.lang.Override
+    public int getProjectCount() {
+      return project_.size();
+    }
+    /**
+     * <code>repeated .proto.Project project = 3;</code>
+     */
+    @java.lang.Override
+    public proto.ProjectOuterClass.Project getProject(int index) {
+      return project_.get(index);
+    }
+    /**
+     * <code>repeated .proto.Project project = 3;</code>
+     */
+    @java.lang.Override
+    public proto.ProjectOuterClass.ProjectOrBuilder getProjectOrBuilder(
+        int index) {
+      return project_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < employee_.size(); i++) {
+        output.writeMessage(1, employee_.get(i));
+      }
+      for (int i = 0; i < department_.size(); i++) {
+        output.writeMessage(2, department_.get(i));
+      }
+      for (int i = 0; i < project_.size(); i++) {
+        output.writeMessage(3, project_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < employee_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, employee_.get(i));
+      }
+      for (int i = 0; i < department_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, department_.get(i));
+      }
+      for (int i = 0; i < project_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, project_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject)) {
+        return super.equals(obj);
+      }
+      proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject other = (proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject) obj;
+
+      if (!getEmployeeList()
+          .equals(other.getEmployeeList())) return false;
+      if (!getDepartmentList()
+          .equals(other.getDepartmentList())) return false;
+      if (!getProjectList()
+          .equals(other.getProjectList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getEmployeeCount() > 0) {
+        hash = (37 * hash) + EMPLOYEE_FIELD_NUMBER;
+        hash = (53 * hash) + getEmployeeList().hashCode();
+      }
+      if (getDepartmentCount() > 0) {
+        hash = (37 * hash) + DEPARTMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getDepartmentList().hashCode();
+      }
+      if (getProjectCount() > 0) {
+        hash = (37 * hash) + PROJECT_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code proto.saveEmployeeWithDepartmentAndProject}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:proto.saveEmployeeWithDepartmentAndProject)
+        proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProjectOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return proto.EmployeeOuterClass.internal_static_proto_saveEmployeeWithDepartmentAndProject_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return proto.EmployeeOuterClass.internal_static_proto_saveEmployeeWithDepartmentAndProject_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject.class, proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject.Builder.class);
+      }
+
+      // Construct using proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (employeeBuilder_ == null) {
+          employee_ = java.util.Collections.emptyList();
+        } else {
+          employee_ = null;
+          employeeBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (departmentBuilder_ == null) {
+          department_ = java.util.Collections.emptyList();
+        } else {
+          department_ = null;
+          departmentBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (projectBuilder_ == null) {
+          project_ = java.util.Collections.emptyList();
+        } else {
+          project_ = null;
+          projectBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return proto.EmployeeOuterClass.internal_static_proto_saveEmployeeWithDepartmentAndProject_descriptor;
+      }
+
+      @java.lang.Override
+      public proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject getDefaultInstanceForType() {
+        return proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject build() {
+        proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject buildPartial() {
+        proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject result = new proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject result) {
+        if (employeeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            employee_ = java.util.Collections.unmodifiableList(employee_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.employee_ = employee_;
+        } else {
+          result.employee_ = employeeBuilder_.build();
+        }
+        if (departmentBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            department_ = java.util.Collections.unmodifiableList(department_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.department_ = department_;
+        } else {
+          result.department_ = departmentBuilder_.build();
+        }
+        if (projectBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            project_ = java.util.Collections.unmodifiableList(project_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.project_ = project_;
+        } else {
+          result.project_ = projectBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject) {
+          return mergeFrom((proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject other) {
+        if (other == proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject.getDefaultInstance()) return this;
+        if (employeeBuilder_ == null) {
+          if (!other.employee_.isEmpty()) {
+            if (employee_.isEmpty()) {
+              employee_ = other.employee_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureEmployeeIsMutable();
+              employee_.addAll(other.employee_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.employee_.isEmpty()) {
+            if (employeeBuilder_.isEmpty()) {
+              employeeBuilder_.dispose();
+              employeeBuilder_ = null;
+              employee_ = other.employee_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              employeeBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getEmployeeFieldBuilder() : null;
+            } else {
+              employeeBuilder_.addAllMessages(other.employee_);
+            }
+          }
+        }
+        if (departmentBuilder_ == null) {
+          if (!other.department_.isEmpty()) {
+            if (department_.isEmpty()) {
+              department_ = other.department_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureDepartmentIsMutable();
+              department_.addAll(other.department_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.department_.isEmpty()) {
+            if (departmentBuilder_.isEmpty()) {
+              departmentBuilder_.dispose();
+              departmentBuilder_ = null;
+              department_ = other.department_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              departmentBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getDepartmentFieldBuilder() : null;
+            } else {
+              departmentBuilder_.addAllMessages(other.department_);
+            }
+          }
+        }
+        if (projectBuilder_ == null) {
+          if (!other.project_.isEmpty()) {
+            if (project_.isEmpty()) {
+              project_ = other.project_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureProjectIsMutable();
+              project_.addAll(other.project_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.project_.isEmpty()) {
+            if (projectBuilder_.isEmpty()) {
+              projectBuilder_.dispose();
+              projectBuilder_ = null;
+              project_ = other.project_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              projectBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getProjectFieldBuilder() : null;
+            } else {
+              projectBuilder_.addAllMessages(other.project_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                proto.EmployeeOuterClass.Employee m =
+                    input.readMessage(
+                        proto.EmployeeOuterClass.Employee.parser(),
+                        extensionRegistry);
+                if (employeeBuilder_ == null) {
+                  ensureEmployeeIsMutable();
+                  employee_.add(m);
+                } else {
+                  employeeBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                proto.DepartmentOuterClass.Department m =
+                    input.readMessage(
+                        proto.DepartmentOuterClass.Department.parser(),
+                        extensionRegistry);
+                if (departmentBuilder_ == null) {
+                  ensureDepartmentIsMutable();
+                  department_.add(m);
+                } else {
+                  departmentBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                proto.ProjectOuterClass.Project m =
+                    input.readMessage(
+                        proto.ProjectOuterClass.Project.parser(),
+                        extensionRegistry);
+                if (projectBuilder_ == null) {
+                  ensureProjectIsMutable();
+                  project_.add(m);
+                } else {
+                  projectBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<proto.EmployeeOuterClass.Employee> employee_ =
+        java.util.Collections.emptyList();
+      private void ensureEmployeeIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          employee_ = new java.util.ArrayList<proto.EmployeeOuterClass.Employee>(employee_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          proto.EmployeeOuterClass.Employee, proto.EmployeeOuterClass.Employee.Builder, proto.EmployeeOuterClass.EmployeeOrBuilder> employeeBuilder_;
+
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public java.util.List<proto.EmployeeOuterClass.Employee> getEmployeeList() {
+        if (employeeBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(employee_);
+        } else {
+          return employeeBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public int getEmployeeCount() {
+        if (employeeBuilder_ == null) {
+          return employee_.size();
+        } else {
+          return employeeBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public proto.EmployeeOuterClass.Employee getEmployee(int index) {
+        if (employeeBuilder_ == null) {
+          return employee_.get(index);
+        } else {
+          return employeeBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public Builder setEmployee(
+          int index, proto.EmployeeOuterClass.Employee value) {
+        if (employeeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeeIsMutable();
+          employee_.set(index, value);
+          onChanged();
+        } else {
+          employeeBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public Builder setEmployee(
+          int index, proto.EmployeeOuterClass.Employee.Builder builderForValue) {
+        if (employeeBuilder_ == null) {
+          ensureEmployeeIsMutable();
+          employee_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          employeeBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public Builder addEmployee(proto.EmployeeOuterClass.Employee value) {
+        if (employeeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeeIsMutable();
+          employee_.add(value);
+          onChanged();
+        } else {
+          employeeBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public Builder addEmployee(
+          int index, proto.EmployeeOuterClass.Employee value) {
+        if (employeeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmployeeIsMutable();
+          employee_.add(index, value);
+          onChanged();
+        } else {
+          employeeBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public Builder addEmployee(
+          proto.EmployeeOuterClass.Employee.Builder builderForValue) {
+        if (employeeBuilder_ == null) {
+          ensureEmployeeIsMutable();
+          employee_.add(builderForValue.build());
+          onChanged();
+        } else {
+          employeeBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public Builder addEmployee(
+          int index, proto.EmployeeOuterClass.Employee.Builder builderForValue) {
+        if (employeeBuilder_ == null) {
+          ensureEmployeeIsMutable();
+          employee_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          employeeBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public Builder addAllEmployee(
+          java.lang.Iterable<? extends proto.EmployeeOuterClass.Employee> values) {
+        if (employeeBuilder_ == null) {
+          ensureEmployeeIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, employee_);
+          onChanged();
+        } else {
+          employeeBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public Builder clearEmployee() {
+        if (employeeBuilder_ == null) {
+          employee_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          employeeBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public Builder removeEmployee(int index) {
+        if (employeeBuilder_ == null) {
+          ensureEmployeeIsMutable();
+          employee_.remove(index);
+          onChanged();
+        } else {
+          employeeBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public proto.EmployeeOuterClass.Employee.Builder getEmployeeBuilder(
+          int index) {
+        return getEmployeeFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public proto.EmployeeOuterClass.EmployeeOrBuilder getEmployeeOrBuilder(
+          int index) {
+        if (employeeBuilder_ == null) {
+          return employee_.get(index);  } else {
+          return employeeBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public java.util.List<? extends proto.EmployeeOuterClass.EmployeeOrBuilder> 
+           getEmployeeOrBuilderList() {
+        if (employeeBuilder_ != null) {
+          return employeeBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(employee_);
+        }
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public proto.EmployeeOuterClass.Employee.Builder addEmployeeBuilder() {
+        return getEmployeeFieldBuilder().addBuilder(
+            proto.EmployeeOuterClass.Employee.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public proto.EmployeeOuterClass.Employee.Builder addEmployeeBuilder(
+          int index) {
+        return getEmployeeFieldBuilder().addBuilder(
+            index, proto.EmployeeOuterClass.Employee.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Employee employee = 1;</code>
+       */
+      public java.util.List<proto.EmployeeOuterClass.Employee.Builder> 
+           getEmployeeBuilderList() {
+        return getEmployeeFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          proto.EmployeeOuterClass.Employee, proto.EmployeeOuterClass.Employee.Builder, proto.EmployeeOuterClass.EmployeeOrBuilder> 
+          getEmployeeFieldBuilder() {
+        if (employeeBuilder_ == null) {
+          employeeBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              proto.EmployeeOuterClass.Employee, proto.EmployeeOuterClass.Employee.Builder, proto.EmployeeOuterClass.EmployeeOrBuilder>(
+                  employee_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          employee_ = null;
+        }
+        return employeeBuilder_;
+      }
+
+      private java.util.List<proto.DepartmentOuterClass.Department> department_ =
+        java.util.Collections.emptyList();
+      private void ensureDepartmentIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          department_ = new java.util.ArrayList<proto.DepartmentOuterClass.Department>(department_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          proto.DepartmentOuterClass.Department, proto.DepartmentOuterClass.Department.Builder, proto.DepartmentOuterClass.DepartmentOrBuilder> departmentBuilder_;
+
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public java.util.List<proto.DepartmentOuterClass.Department> getDepartmentList() {
+        if (departmentBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(department_);
+        } else {
+          return departmentBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public int getDepartmentCount() {
+        if (departmentBuilder_ == null) {
+          return department_.size();
+        } else {
+          return departmentBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public proto.DepartmentOuterClass.Department getDepartment(int index) {
+        if (departmentBuilder_ == null) {
+          return department_.get(index);
+        } else {
+          return departmentBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public Builder setDepartment(
+          int index, proto.DepartmentOuterClass.Department value) {
+        if (departmentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDepartmentIsMutable();
+          department_.set(index, value);
+          onChanged();
+        } else {
+          departmentBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public Builder setDepartment(
+          int index, proto.DepartmentOuterClass.Department.Builder builderForValue) {
+        if (departmentBuilder_ == null) {
+          ensureDepartmentIsMutable();
+          department_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          departmentBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public Builder addDepartment(proto.DepartmentOuterClass.Department value) {
+        if (departmentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDepartmentIsMutable();
+          department_.add(value);
+          onChanged();
+        } else {
+          departmentBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public Builder addDepartment(
+          int index, proto.DepartmentOuterClass.Department value) {
+        if (departmentBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureDepartmentIsMutable();
+          department_.add(index, value);
+          onChanged();
+        } else {
+          departmentBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public Builder addDepartment(
+          proto.DepartmentOuterClass.Department.Builder builderForValue) {
+        if (departmentBuilder_ == null) {
+          ensureDepartmentIsMutable();
+          department_.add(builderForValue.build());
+          onChanged();
+        } else {
+          departmentBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public Builder addDepartment(
+          int index, proto.DepartmentOuterClass.Department.Builder builderForValue) {
+        if (departmentBuilder_ == null) {
+          ensureDepartmentIsMutable();
+          department_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          departmentBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public Builder addAllDepartment(
+          java.lang.Iterable<? extends proto.DepartmentOuterClass.Department> values) {
+        if (departmentBuilder_ == null) {
+          ensureDepartmentIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, department_);
+          onChanged();
+        } else {
+          departmentBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public Builder clearDepartment() {
+        if (departmentBuilder_ == null) {
+          department_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          departmentBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public Builder removeDepartment(int index) {
+        if (departmentBuilder_ == null) {
+          ensureDepartmentIsMutable();
+          department_.remove(index);
+          onChanged();
+        } else {
+          departmentBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public proto.DepartmentOuterClass.Department.Builder getDepartmentBuilder(
+          int index) {
+        return getDepartmentFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public proto.DepartmentOuterClass.DepartmentOrBuilder getDepartmentOrBuilder(
+          int index) {
+        if (departmentBuilder_ == null) {
+          return department_.get(index);  } else {
+          return departmentBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public java.util.List<? extends proto.DepartmentOuterClass.DepartmentOrBuilder> 
+           getDepartmentOrBuilderList() {
+        if (departmentBuilder_ != null) {
+          return departmentBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(department_);
+        }
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public proto.DepartmentOuterClass.Department.Builder addDepartmentBuilder() {
+        return getDepartmentFieldBuilder().addBuilder(
+            proto.DepartmentOuterClass.Department.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public proto.DepartmentOuterClass.Department.Builder addDepartmentBuilder(
+          int index) {
+        return getDepartmentFieldBuilder().addBuilder(
+            index, proto.DepartmentOuterClass.Department.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Department department = 2;</code>
+       */
+      public java.util.List<proto.DepartmentOuterClass.Department.Builder> 
+           getDepartmentBuilderList() {
+        return getDepartmentFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          proto.DepartmentOuterClass.Department, proto.DepartmentOuterClass.Department.Builder, proto.DepartmentOuterClass.DepartmentOrBuilder> 
+          getDepartmentFieldBuilder() {
+        if (departmentBuilder_ == null) {
+          departmentBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              proto.DepartmentOuterClass.Department, proto.DepartmentOuterClass.Department.Builder, proto.DepartmentOuterClass.DepartmentOrBuilder>(
+                  department_,
+                  ((bitField0_ & 0x00000002) != 0),
+                  getParentForChildren(),
+                  isClean());
+          department_ = null;
+        }
+        return departmentBuilder_;
+      }
+
+      private java.util.List<proto.ProjectOuterClass.Project> project_ =
+        java.util.Collections.emptyList();
+      private void ensureProjectIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          project_ = new java.util.ArrayList<proto.ProjectOuterClass.Project>(project_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          proto.ProjectOuterClass.Project, proto.ProjectOuterClass.Project.Builder, proto.ProjectOuterClass.ProjectOrBuilder> projectBuilder_;
+
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public java.util.List<proto.ProjectOuterClass.Project> getProjectList() {
+        if (projectBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(project_);
+        } else {
+          return projectBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public int getProjectCount() {
+        if (projectBuilder_ == null) {
+          return project_.size();
+        } else {
+          return projectBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public proto.ProjectOuterClass.Project getProject(int index) {
+        if (projectBuilder_ == null) {
+          return project_.get(index);
+        } else {
+          return projectBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public Builder setProject(
+          int index, proto.ProjectOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectIsMutable();
+          project_.set(index, value);
+          onChanged();
+        } else {
+          projectBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public Builder setProject(
+          int index, proto.ProjectOuterClass.Project.Builder builderForValue) {
+        if (projectBuilder_ == null) {
+          ensureProjectIsMutable();
+          project_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          projectBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public Builder addProject(proto.ProjectOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectIsMutable();
+          project_.add(value);
+          onChanged();
+        } else {
+          projectBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public Builder addProject(
+          int index, proto.ProjectOuterClass.Project value) {
+        if (projectBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureProjectIsMutable();
+          project_.add(index, value);
+          onChanged();
+        } else {
+          projectBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public Builder addProject(
+          proto.ProjectOuterClass.Project.Builder builderForValue) {
+        if (projectBuilder_ == null) {
+          ensureProjectIsMutable();
+          project_.add(builderForValue.build());
+          onChanged();
+        } else {
+          projectBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public Builder addProject(
+          int index, proto.ProjectOuterClass.Project.Builder builderForValue) {
+        if (projectBuilder_ == null) {
+          ensureProjectIsMutable();
+          project_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          projectBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public Builder addAllProject(
+          java.lang.Iterable<? extends proto.ProjectOuterClass.Project> values) {
+        if (projectBuilder_ == null) {
+          ensureProjectIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, project_);
+          onChanged();
+        } else {
+          projectBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public Builder clearProject() {
+        if (projectBuilder_ == null) {
+          project_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          projectBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public Builder removeProject(int index) {
+        if (projectBuilder_ == null) {
+          ensureProjectIsMutable();
+          project_.remove(index);
+          onChanged();
+        } else {
+          projectBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public proto.ProjectOuterClass.Project.Builder getProjectBuilder(
+          int index) {
+        return getProjectFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public proto.ProjectOuterClass.ProjectOrBuilder getProjectOrBuilder(
+          int index) {
+        if (projectBuilder_ == null) {
+          return project_.get(index);  } else {
+          return projectBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public java.util.List<? extends proto.ProjectOuterClass.ProjectOrBuilder> 
+           getProjectOrBuilderList() {
+        if (projectBuilder_ != null) {
+          return projectBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(project_);
+        }
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public proto.ProjectOuterClass.Project.Builder addProjectBuilder() {
+        return getProjectFieldBuilder().addBuilder(
+            proto.ProjectOuterClass.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public proto.ProjectOuterClass.Project.Builder addProjectBuilder(
+          int index) {
+        return getProjectFieldBuilder().addBuilder(
+            index, proto.ProjectOuterClass.Project.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .proto.Project project = 3;</code>
+       */
+      public java.util.List<proto.ProjectOuterClass.Project.Builder> 
+           getProjectBuilderList() {
+        return getProjectFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          proto.ProjectOuterClass.Project, proto.ProjectOuterClass.Project.Builder, proto.ProjectOuterClass.ProjectOrBuilder> 
+          getProjectFieldBuilder() {
+        if (projectBuilder_ == null) {
+          projectBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              proto.ProjectOuterClass.Project, proto.ProjectOuterClass.Project.Builder, proto.ProjectOuterClass.ProjectOrBuilder>(
+                  project_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          project_ = null;
+        }
+        return projectBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:proto.saveEmployeeWithDepartmentAndProject)
+    }
+
+    // @@protoc_insertion_point(class_scope:proto.saveEmployeeWithDepartmentAndProject)
+    private static final proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject();
+    }
+
+    public static proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<saveEmployeeWithDepartmentAndProject>
+        PARSER = new com.google.protobuf.AbstractParser<saveEmployeeWithDepartmentAndProject>() {
+      @java.lang.Override
+      public saveEmployeeWithDepartmentAndProject parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<saveEmployeeWithDepartmentAndProject> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<saveEmployeeWithDepartmentAndProject> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public proto.EmployeeOuterClass.saveEmployeeWithDepartmentAndProject getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3139,6 +4525,11 @@ public final class EmployeeOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_proto_saveEmployeeResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_proto_saveEmployeeWithDepartmentAndProject_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_proto_saveEmployeeWithDepartmentAndProject_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_proto_deleteEmployeeStatus_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3157,31 +4548,41 @@ public final class EmployeeOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016Employee.proto\022\005proto\"^\n\010Employee\022\n\n\002i" +
-      "d\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\025\n\r" +
-      "department_id\030\004 \001(\005\022\022\n\nproject_id\030\005 \001(\005\"" +
-      "\035\n\017EmployeeRequest\022\n\n\002id\030\001 \001(\005\"&\n\024saveEm" +
-      "ployeeResponse\022\016\n\006status\030\001 \001(\t\"&\n\024delete" +
-      "EmployeeStatus\022\016\n\006status\030\001 \001(\t\"5\n\020Employ" +
-      "eeResponse\022!\n\010employee\030\001 \001(\0132\017.proto.Emp" +
-      "loyee2\201\002\n\017EmployeeService\0226\n\013getEmployee" +
-      "\022\026.proto.EmployeeRequest\032\017.proto.Employe" +
-      "e\022;\n\013addEmployee\022\017.proto.Employee\032\033.prot" +
-      "o.saveEmployeeResponse\022E\n\016deleteEmployee" +
-      "\022\026.proto.EmployeeRequest\032\033.proto.deleteE" +
-      "mployeeStatus\0222\n\016updateEmployee\022\017.proto." +
-      "Employee\032\017.proto.Employeeb\006proto3"
+      "\n\016Employee.proto\022\005proto\032\020Department.prot" +
+      "o\032\rProject.proto\"3\n\010Employee\022\n\n\002id\030\001 \001(\005" +
+      "\022\014\n\004name\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\"\035\n\017Employe" +
+      "eRequest\022\n\n\002id\030\001 \001(\005\"&\n\024saveEmployeeResp" +
+      "onse\022\016\n\006status\030\001 \001(\t\"\221\001\n$saveEmployeeWit" +
+      "hDepartmentAndProject\022!\n\010employee\030\001 \003(\0132" +
+      "\017.proto.Employee\022%\n\ndepartment\030\002 \003(\0132\021.p" +
+      "roto.Department\022\037\n\007project\030\003 \003(\0132\016.proto" +
+      ".Project\"&\n\024deleteEmployeeStatus\022\016\n\006stat" +
+      "us\030\001 \001(\t\"5\n\020EmployeeResponse\022!\n\010employee" +
+      "\030\001 \001(\0132\017.proto.Employee2\237\001\n\'EmployeeServ" +
+      "iceWithDepartmentAndProject\022t\n\030setEmploy" +
+      "eeAndDepartment\022+.proto.saveEmployeeWith" +
+      "DepartmentAndProject\032+.proto.saveEmploye" +
+      "eWithDepartmentAndProject2\221\002\n\017EmployeeSe" +
+      "rvice\022>\n\013getEmployee\022\026.proto.EmployeeReq" +
+      "uest\032\027.proto.EmployeeResponse\022;\n\013addEmpl" +
+      "oyee\022\017.proto.Employee\032\033.proto.saveEmploy" +
+      "eeResponse\022E\n\016deleteEmployee\022\026.proto.Emp" +
+      "loyeeRequest\032\033.proto.deleteEmployeeStatu" +
+      "s\022:\n\016updateEmployee\022\017.proto.Employee\032\027.p" +
+      "roto.EmployeeResponseb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          proto.DepartmentOuterClass.getDescriptor(),
+          proto.ProjectOuterClass.getDescriptor(),
         });
     internal_static_proto_Employee_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_proto_Employee_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_Employee_descriptor,
-        new java.lang.String[] { "Id", "Name", "Email", "DepartmentId", "ProjectId", });
+        new java.lang.String[] { "Id", "Name", "Email", });
     internal_static_proto_EmployeeRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_proto_EmployeeRequest_fieldAccessorTable = new
@@ -3194,18 +4595,26 @@ public final class EmployeeOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_saveEmployeeResponse_descriptor,
         new java.lang.String[] { "Status", });
-    internal_static_proto_deleteEmployeeStatus_descriptor =
+    internal_static_proto_saveEmployeeWithDepartmentAndProject_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_proto_saveEmployeeWithDepartmentAndProject_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_saveEmployeeWithDepartmentAndProject_descriptor,
+        new java.lang.String[] { "Employee", "Department", "Project", });
+    internal_static_proto_deleteEmployeeStatus_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_proto_deleteEmployeeStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_deleteEmployeeStatus_descriptor,
         new java.lang.String[] { "Status", });
     internal_static_proto_EmployeeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_proto_EmployeeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_proto_EmployeeResponse_descriptor,
         new java.lang.String[] { "Employee", });
+    proto.DepartmentOuterClass.getDescriptor();
+    proto.ProjectOuterClass.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

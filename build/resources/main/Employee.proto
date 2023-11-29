@@ -1,12 +1,11 @@
 syntax="proto3";
 package proto;
-
+import "Department.proto";
+import "Project.proto";
 message Employee{
   int32 id=1;
   string name=2;
   string email=3;
-  int32  department_id=4;
-  int32  project_id=5;
 }
 
 message EmployeeRequest{
@@ -15,16 +14,25 @@ message EmployeeRequest{
 message saveEmployeeResponse{
   string status=1;
 }
+message saveEmployeeWithDepartmentAndProject{
+ repeated Employee employee=1;
+ repeated Department department=2;
+ repeated Project project=3;
+}
+
 message deleteEmployeeStatus{
   string status=1;
 }
 message EmployeeResponse{
   Employee employee=1;
 }
+service EmployeeServiceWithDepartmentAndProject{
+  rpc setEmployeeAndDepartment(saveEmployeeWithDepartmentAndProject) returns (saveEmployeeWithDepartmentAndProject);
+}
 
 service EmployeeService{
-  rpc getEmployee(EmployeeRequest) returns (Employee);
+  rpc getEmployee(EmployeeRequest) returns (EmployeeResponse);
   rpc addEmployee(Employee)  returns (saveEmployeeResponse);
   rpc deleteEmployee(EmployeeRequest) returns (deleteEmployeeStatus);
-  rpc updateEmployee(Employee) returns (Employee);
+  rpc updateEmployee(Employee) returns (EmployeeResponse);
 }

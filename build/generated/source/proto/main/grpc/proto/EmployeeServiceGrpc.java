@@ -16,28 +16,28 @@ public final class EmployeeServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<proto.EmployeeOuterClass.EmployeeRequest,
-      proto.EmployeeOuterClass.Employee> getGetEmployeeMethod;
+      proto.EmployeeOuterClass.EmployeeResponse> getGetEmployeeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getEmployee",
       requestType = proto.EmployeeOuterClass.EmployeeRequest.class,
-      responseType = proto.EmployeeOuterClass.Employee.class,
+      responseType = proto.EmployeeOuterClass.EmployeeResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<proto.EmployeeOuterClass.EmployeeRequest,
-      proto.EmployeeOuterClass.Employee> getGetEmployeeMethod() {
-    io.grpc.MethodDescriptor<proto.EmployeeOuterClass.EmployeeRequest, proto.EmployeeOuterClass.Employee> getGetEmployeeMethod;
+      proto.EmployeeOuterClass.EmployeeResponse> getGetEmployeeMethod() {
+    io.grpc.MethodDescriptor<proto.EmployeeOuterClass.EmployeeRequest, proto.EmployeeOuterClass.EmployeeResponse> getGetEmployeeMethod;
     if ((getGetEmployeeMethod = EmployeeServiceGrpc.getGetEmployeeMethod) == null) {
       synchronized (EmployeeServiceGrpc.class) {
         if ((getGetEmployeeMethod = EmployeeServiceGrpc.getGetEmployeeMethod) == null) {
           EmployeeServiceGrpc.getGetEmployeeMethod = getGetEmployeeMethod =
-              io.grpc.MethodDescriptor.<proto.EmployeeOuterClass.EmployeeRequest, proto.EmployeeOuterClass.Employee>newBuilder()
+              io.grpc.MethodDescriptor.<proto.EmployeeOuterClass.EmployeeRequest, proto.EmployeeOuterClass.EmployeeResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getEmployee"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   proto.EmployeeOuterClass.EmployeeRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  proto.EmployeeOuterClass.Employee.getDefaultInstance()))
+                  proto.EmployeeOuterClass.EmployeeResponse.getDefaultInstance()))
               .setSchemaDescriptor(new EmployeeServiceMethodDescriptorSupplier("getEmployee"))
               .build();
         }
@@ -109,28 +109,28 @@ public final class EmployeeServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<proto.EmployeeOuterClass.Employee,
-      proto.EmployeeOuterClass.Employee> getUpdateEmployeeMethod;
+      proto.EmployeeOuterClass.EmployeeResponse> getUpdateEmployeeMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "updateEmployee",
       requestType = proto.EmployeeOuterClass.Employee.class,
-      responseType = proto.EmployeeOuterClass.Employee.class,
+      responseType = proto.EmployeeOuterClass.EmployeeResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<proto.EmployeeOuterClass.Employee,
-      proto.EmployeeOuterClass.Employee> getUpdateEmployeeMethod() {
-    io.grpc.MethodDescriptor<proto.EmployeeOuterClass.Employee, proto.EmployeeOuterClass.Employee> getUpdateEmployeeMethod;
+      proto.EmployeeOuterClass.EmployeeResponse> getUpdateEmployeeMethod() {
+    io.grpc.MethodDescriptor<proto.EmployeeOuterClass.Employee, proto.EmployeeOuterClass.EmployeeResponse> getUpdateEmployeeMethod;
     if ((getUpdateEmployeeMethod = EmployeeServiceGrpc.getUpdateEmployeeMethod) == null) {
       synchronized (EmployeeServiceGrpc.class) {
         if ((getUpdateEmployeeMethod = EmployeeServiceGrpc.getUpdateEmployeeMethod) == null) {
           EmployeeServiceGrpc.getUpdateEmployeeMethod = getUpdateEmployeeMethod =
-              io.grpc.MethodDescriptor.<proto.EmployeeOuterClass.Employee, proto.EmployeeOuterClass.Employee>newBuilder()
+              io.grpc.MethodDescriptor.<proto.EmployeeOuterClass.Employee, proto.EmployeeOuterClass.EmployeeResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "updateEmployee"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   proto.EmployeeOuterClass.Employee.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  proto.EmployeeOuterClass.Employee.getDefaultInstance()))
+                  proto.EmployeeOuterClass.EmployeeResponse.getDefaultInstance()))
               .setSchemaDescriptor(new EmployeeServiceMethodDescriptorSupplier("updateEmployee"))
               .build();
         }
@@ -190,7 +190,7 @@ public final class EmployeeServiceGrpc {
     /**
      */
     default void getEmployee(proto.EmployeeOuterClass.EmployeeRequest request,
-        io.grpc.stub.StreamObserver<proto.EmployeeOuterClass.Employee> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.EmployeeOuterClass.EmployeeResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetEmployeeMethod(), responseObserver);
     }
 
@@ -211,7 +211,7 @@ public final class EmployeeServiceGrpc {
     /**
      */
     default void updateEmployee(proto.EmployeeOuterClass.Employee request,
-        io.grpc.stub.StreamObserver<proto.EmployeeOuterClass.Employee> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.EmployeeOuterClass.EmployeeResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateEmployeeMethod(), responseObserver);
     }
   }
@@ -246,7 +246,7 @@ public final class EmployeeServiceGrpc {
     /**
      */
     public void getEmployee(proto.EmployeeOuterClass.EmployeeRequest request,
-        io.grpc.stub.StreamObserver<proto.EmployeeOuterClass.Employee> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.EmployeeOuterClass.EmployeeResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetEmployeeMethod(), getCallOptions()), request, responseObserver);
     }
@@ -270,7 +270,7 @@ public final class EmployeeServiceGrpc {
     /**
      */
     public void updateEmployee(proto.EmployeeOuterClass.Employee request,
-        io.grpc.stub.StreamObserver<proto.EmployeeOuterClass.Employee> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.EmployeeOuterClass.EmployeeResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateEmployeeMethod(), getCallOptions()), request, responseObserver);
     }
@@ -294,7 +294,7 @@ public final class EmployeeServiceGrpc {
 
     /**
      */
-    public proto.EmployeeOuterClass.Employee getEmployee(proto.EmployeeOuterClass.EmployeeRequest request) {
+    public proto.EmployeeOuterClass.EmployeeResponse getEmployee(proto.EmployeeOuterClass.EmployeeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetEmployeeMethod(), getCallOptions(), request);
     }
@@ -315,7 +315,7 @@ public final class EmployeeServiceGrpc {
 
     /**
      */
-    public proto.EmployeeOuterClass.Employee updateEmployee(proto.EmployeeOuterClass.Employee request) {
+    public proto.EmployeeOuterClass.EmployeeResponse updateEmployee(proto.EmployeeOuterClass.Employee request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateEmployeeMethod(), getCallOptions(), request);
     }
@@ -339,7 +339,7 @@ public final class EmployeeServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<proto.EmployeeOuterClass.Employee> getEmployee(
+    public com.google.common.util.concurrent.ListenableFuture<proto.EmployeeOuterClass.EmployeeResponse> getEmployee(
         proto.EmployeeOuterClass.EmployeeRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetEmployeeMethod(), getCallOptions()), request);
@@ -363,7 +363,7 @@ public final class EmployeeServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<proto.EmployeeOuterClass.Employee> updateEmployee(
+    public com.google.common.util.concurrent.ListenableFuture<proto.EmployeeOuterClass.EmployeeResponse> updateEmployee(
         proto.EmployeeOuterClass.Employee request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateEmployeeMethod(), getCallOptions()), request);
@@ -394,7 +394,7 @@ public final class EmployeeServiceGrpc {
       switch (methodId) {
         case METHODID_GET_EMPLOYEE:
           serviceImpl.getEmployee((proto.EmployeeOuterClass.EmployeeRequest) request,
-              (io.grpc.stub.StreamObserver<proto.EmployeeOuterClass.Employee>) responseObserver);
+              (io.grpc.stub.StreamObserver<proto.EmployeeOuterClass.EmployeeResponse>) responseObserver);
           break;
         case METHODID_ADD_EMPLOYEE:
           serviceImpl.addEmployee((proto.EmployeeOuterClass.Employee) request,
@@ -406,7 +406,7 @@ public final class EmployeeServiceGrpc {
           break;
         case METHODID_UPDATE_EMPLOYEE:
           serviceImpl.updateEmployee((proto.EmployeeOuterClass.Employee) request,
-              (io.grpc.stub.StreamObserver<proto.EmployeeOuterClass.Employee>) responseObserver);
+              (io.grpc.stub.StreamObserver<proto.EmployeeOuterClass.EmployeeResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -431,7 +431,7 @@ public final class EmployeeServiceGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               proto.EmployeeOuterClass.EmployeeRequest,
-              proto.EmployeeOuterClass.Employee>(
+              proto.EmployeeOuterClass.EmployeeResponse>(
                 service, METHODID_GET_EMPLOYEE)))
         .addMethod(
           getAddEmployeeMethod(),
@@ -452,7 +452,7 @@ public final class EmployeeServiceGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               proto.EmployeeOuterClass.Employee,
-              proto.EmployeeOuterClass.Employee>(
+              proto.EmployeeOuterClass.EmployeeResponse>(
                 service, METHODID_UPDATE_EMPLOYEE)))
         .build();
   }

@@ -21,13 +21,11 @@ public class EmployeeQueryImpl implements EmployeeQuery {
     @Override
     public void saveData(Employee employee) {
         try(Connection connection= dataSource.getConnection()) {
-            String query="INSERT INTO employ(id,name,email,department_id,project_id) VALUES (?,?,?,?,?)";
+            String query="INSERT INTO employee12(id,name,email) VALUES (?,?,?)";
             try(PreparedStatement statement=connection.prepareStatement(query)){
                 statement.setInt(1,employee.getId());
                 statement.setString(2, employee.getName());
                 statement.setString(3,employee.getEmail());
-                statement.setInt(4,employee.getDepartment_id());
-                statement.setInt(5,employee.getProject_id());
                  statement.executeUpdate();
             }
         } catch (SQLException e) {
@@ -60,7 +58,9 @@ public class EmployeeQueryImpl implements EmployeeQuery {
                 statement.setString(2, employee.getName());
                 statement.setString(3, employee.getEmail());
                 statement.setInt(4,employee.getId());
-                statement.executeUpdate();
+               statement.executeUpdate();
+
+
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -77,11 +77,7 @@ public class EmployeeQueryImpl implements EmployeeQuery {
                 statement.setInt(1, id);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     if (resultSet.next()) {
-                        Employee employee = new Employee();
-                        employee.setId(resultSet.getInt("id"));
-                        employee.setName(resultSet.getString("name"));
-                        employee.setEmail(resultSet.getString("email"));
-                        return employee;
+                        return mapToEmployee(resultSet);
                     } else {
                         return null;
                     }
@@ -94,5 +90,11 @@ public class EmployeeQueryImpl implements EmployeeQuery {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    public Employee mapToEmployee(ResultSet resultSet) throws SQLException {
+        int id1=resultSet.getInt("id");
+        String name=resultSet.getString("name");
+        String email= resultSet.getString("email");
+        return new Employee(id1,"name","email");
     }
     }

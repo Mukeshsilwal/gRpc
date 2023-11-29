@@ -24,7 +24,7 @@ public class EmployeeFacadeImpl{
     }
 
 
-    public EmployeeOuterClass.Employee getEmployee(EmployeeOuterClass.EmployeeRequest request) {
+    public EmployeeOuterClass.EmployeeResponse getEmployee(EmployeeOuterClass.EmployeeRequest request) {
         int id=request.getId();
         Employee employee1=employeeService.getEmployee(id);
         if(employee1!=null){
@@ -36,7 +36,7 @@ public class EmployeeFacadeImpl{
     }
 
 
-    public EmployeeOuterClass.Employee updateEmployee(EmployeeOuterClass.Employee employee) {
+    public EmployeeOuterClass.EmployeeResponse updateEmployee(EmployeeOuterClass.Employee employee) {
         Employee employee1=toEmployee(employee);
         Employee employee2=employeeService.updateEmployee(employee1);
         return toOuterClass(employee2);
@@ -51,8 +51,8 @@ public class EmployeeFacadeImpl{
     public Employee toEmployee(EmployeeOuterClass.Employee employee){
         return modelMapper.map(employee,Employee.class);
     }
-    public EmployeeOuterClass.Employee toOuterClass(Employee employee){
-        return modelMapper.map(employee, EmployeeOuterClass.Employee.class);
+    public EmployeeOuterClass.EmployeeResponse toOuterClass(Employee employee){
+        return modelMapper.map(employee, EmployeeOuterClass.EmployeeResponse.class);
     }
 
 

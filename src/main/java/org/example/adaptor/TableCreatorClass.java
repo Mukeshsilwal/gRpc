@@ -27,14 +27,10 @@ public class TableCreatorClass {
                     + "id INT PRIMARY KEY,"
                     + "name VARCHAR(244)"
                     + ")";
-            String query2 = "CREATE TABLE IF NOT EXISTS employ ("
+            String query2 = "CREATE TABLE IF NOT EXISTS employee12 ("
                     + "id INT PRIMARY KEY,"
                     + "name VARCHAR(255),"
-                    + "email VARCHAR(255),"
-                    + "department_id INT,"
-                    + "FOREIGN KEY (department_id) REFERENCES depart(id),"
-                    + "project_id INT,"
-                    + "FOREIGN KEY (project_id) REFERENCES project1(id)"
+                    + "email VARCHAR(255)"
                     + ")";
 
             try(PreparedStatement statement= connection.prepareStatement(query)){

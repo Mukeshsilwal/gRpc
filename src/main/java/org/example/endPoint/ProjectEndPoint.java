@@ -15,7 +15,7 @@ public class ProjectEndPoint extends ProjectServiceGrpc.ProjectServiceImplBase {
     }
 
     @Override
-    public void getProject(ProjectOuterClass.ProjectRequest request, StreamObserver<ProjectOuterClass.Project> responseObserver) {
+    public void getProject(ProjectOuterClass.ProjectRequest request, StreamObserver<ProjectOuterClass.ProjectResponse> responseObserver) {
         super.getProject(request, responseObserver);
     }
 
@@ -33,7 +33,7 @@ public class ProjectEndPoint extends ProjectServiceGrpc.ProjectServiceImplBase {
     }
 
     @Override
-    public void updateProject(ProjectOuterClass.Project request, StreamObserver<ProjectOuterClass.Project> responseObserver) {
+    public void updateProject(ProjectOuterClass.Project request, StreamObserver<ProjectOuterClass.ProjectResponse> responseObserver) {
         super.updateProject(request, responseObserver);
     }
 }

@@ -16,9 +16,10 @@ public class EmployeeEndPoint extends EmployeeServiceGrpc.EmployeeServiceImplBas
     }
 
     @Override
-    public void getEmployee(EmployeeOuterClass.EmployeeRequest request, StreamObserver<EmployeeOuterClass.Employee> responseObserver) {
+    public void getEmployee(EmployeeOuterClass.EmployeeRequest request, StreamObserver<EmployeeOuterClass.EmployeeResponse> responseObserver) {
         super.getEmployee(request, responseObserver);
-         EmployeeOuterClass.Employee employee =facade.getEmployee(request);
+         EmployeeOuterClass.EmployeeResponse employee =facade.getEmployee(request);
+         System.out.println(employee);
          responseObserver.onNext(employee);
          responseObserver.onCompleted();
 
@@ -43,9 +44,9 @@ public class EmployeeEndPoint extends EmployeeServiceGrpc.EmployeeServiceImplBas
     }
 
     @Override
-    public void updateEmployee(EmployeeOuterClass.Employee request, StreamObserver<EmployeeOuterClass.Employee> responseObserver) {
+    public void updateEmployee(EmployeeOuterClass.Employee request, StreamObserver<EmployeeOuterClass.EmployeeResponse> responseObserver) {
         super.updateEmployee(request, responseObserver);
-        EmployeeOuterClass.Employee employee=facade.updateEmployee(request);
+        EmployeeOuterClass.EmployeeResponse employee=facade.updateEmployee(request);
         responseObserver.onNext(employee);
         responseObserver.onCompleted();
     }

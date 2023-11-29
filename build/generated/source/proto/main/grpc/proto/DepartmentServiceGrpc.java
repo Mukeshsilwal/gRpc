@@ -16,28 +16,28 @@ public final class DepartmentServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<proto.DepartmentOuterClass.DepartmentRequest,
-      proto.DepartmentOuterClass.Department> getGetDepartmentMethod;
+      proto.DepartmentOuterClass.DepartmentResponse> getGetDepartmentMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getDepartment",
       requestType = proto.DepartmentOuterClass.DepartmentRequest.class,
-      responseType = proto.DepartmentOuterClass.Department.class,
+      responseType = proto.DepartmentOuterClass.DepartmentResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<proto.DepartmentOuterClass.DepartmentRequest,
-      proto.DepartmentOuterClass.Department> getGetDepartmentMethod() {
-    io.grpc.MethodDescriptor<proto.DepartmentOuterClass.DepartmentRequest, proto.DepartmentOuterClass.Department> getGetDepartmentMethod;
+      proto.DepartmentOuterClass.DepartmentResponse> getGetDepartmentMethod() {
+    io.grpc.MethodDescriptor<proto.DepartmentOuterClass.DepartmentRequest, proto.DepartmentOuterClass.DepartmentResponse> getGetDepartmentMethod;
     if ((getGetDepartmentMethod = DepartmentServiceGrpc.getGetDepartmentMethod) == null) {
       synchronized (DepartmentServiceGrpc.class) {
         if ((getGetDepartmentMethod = DepartmentServiceGrpc.getGetDepartmentMethod) == null) {
           DepartmentServiceGrpc.getGetDepartmentMethod = getGetDepartmentMethod =
-              io.grpc.MethodDescriptor.<proto.DepartmentOuterClass.DepartmentRequest, proto.DepartmentOuterClass.Department>newBuilder()
+              io.grpc.MethodDescriptor.<proto.DepartmentOuterClass.DepartmentRequest, proto.DepartmentOuterClass.DepartmentResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getDepartment"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   proto.DepartmentOuterClass.DepartmentRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  proto.DepartmentOuterClass.Department.getDefaultInstance()))
+                  proto.DepartmentOuterClass.DepartmentResponse.getDefaultInstance()))
               .setSchemaDescriptor(new DepartmentServiceMethodDescriptorSupplier("getDepartment"))
               .build();
         }
@@ -109,28 +109,28 @@ public final class DepartmentServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<proto.DepartmentOuterClass.Department,
-      proto.DepartmentOuterClass.Department> getUpdateDepartmentMethod;
+      proto.DepartmentOuterClass.DepartmentResponse> getUpdateDepartmentMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "updateDepartment",
       requestType = proto.DepartmentOuterClass.Department.class,
-      responseType = proto.DepartmentOuterClass.Department.class,
+      responseType = proto.DepartmentOuterClass.DepartmentResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<proto.DepartmentOuterClass.Department,
-      proto.DepartmentOuterClass.Department> getUpdateDepartmentMethod() {
-    io.grpc.MethodDescriptor<proto.DepartmentOuterClass.Department, proto.DepartmentOuterClass.Department> getUpdateDepartmentMethod;
+      proto.DepartmentOuterClass.DepartmentResponse> getUpdateDepartmentMethod() {
+    io.grpc.MethodDescriptor<proto.DepartmentOuterClass.Department, proto.DepartmentOuterClass.DepartmentResponse> getUpdateDepartmentMethod;
     if ((getUpdateDepartmentMethod = DepartmentServiceGrpc.getUpdateDepartmentMethod) == null) {
       synchronized (DepartmentServiceGrpc.class) {
         if ((getUpdateDepartmentMethod = DepartmentServiceGrpc.getUpdateDepartmentMethod) == null) {
           DepartmentServiceGrpc.getUpdateDepartmentMethod = getUpdateDepartmentMethod =
-              io.grpc.MethodDescriptor.<proto.DepartmentOuterClass.Department, proto.DepartmentOuterClass.Department>newBuilder()
+              io.grpc.MethodDescriptor.<proto.DepartmentOuterClass.Department, proto.DepartmentOuterClass.DepartmentResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "updateDepartment"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   proto.DepartmentOuterClass.Department.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  proto.DepartmentOuterClass.Department.getDefaultInstance()))
+                  proto.DepartmentOuterClass.DepartmentResponse.getDefaultInstance()))
               .setSchemaDescriptor(new DepartmentServiceMethodDescriptorSupplier("updateDepartment"))
               .build();
         }
@@ -190,7 +190,7 @@ public final class DepartmentServiceGrpc {
     /**
      */
     default void getDepartment(proto.DepartmentOuterClass.DepartmentRequest request,
-        io.grpc.stub.StreamObserver<proto.DepartmentOuterClass.Department> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.DepartmentOuterClass.DepartmentResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDepartmentMethod(), responseObserver);
     }
 
@@ -211,7 +211,7 @@ public final class DepartmentServiceGrpc {
     /**
      */
     default void updateDepartment(proto.DepartmentOuterClass.Department request,
-        io.grpc.stub.StreamObserver<proto.DepartmentOuterClass.Department> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.DepartmentOuterClass.DepartmentResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDepartmentMethod(), responseObserver);
     }
   }
@@ -246,7 +246,7 @@ public final class DepartmentServiceGrpc {
     /**
      */
     public void getDepartment(proto.DepartmentOuterClass.DepartmentRequest request,
-        io.grpc.stub.StreamObserver<proto.DepartmentOuterClass.Department> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.DepartmentOuterClass.DepartmentResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetDepartmentMethod(), getCallOptions()), request, responseObserver);
     }
@@ -270,7 +270,7 @@ public final class DepartmentServiceGrpc {
     /**
      */
     public void updateDepartment(proto.DepartmentOuterClass.Department request,
-        io.grpc.stub.StreamObserver<proto.DepartmentOuterClass.Department> responseObserver) {
+        io.grpc.stub.StreamObserver<proto.DepartmentOuterClass.DepartmentResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateDepartmentMethod(), getCallOptions()), request, responseObserver);
     }
@@ -294,7 +294,7 @@ public final class DepartmentServiceGrpc {
 
     /**
      */
-    public proto.DepartmentOuterClass.Department getDepartment(proto.DepartmentOuterClass.DepartmentRequest request) {
+    public proto.DepartmentOuterClass.DepartmentResponse getDepartment(proto.DepartmentOuterClass.DepartmentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDepartmentMethod(), getCallOptions(), request);
     }
@@ -315,7 +315,7 @@ public final class DepartmentServiceGrpc {
 
     /**
      */
-    public proto.DepartmentOuterClass.Department updateDepartment(proto.DepartmentOuterClass.Department request) {
+    public proto.DepartmentOuterClass.DepartmentResponse updateDepartment(proto.DepartmentOuterClass.Department request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateDepartmentMethod(), getCallOptions(), request);
     }
@@ -339,7 +339,7 @@ public final class DepartmentServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<proto.DepartmentOuterClass.Department> getDepartment(
+    public com.google.common.util.concurrent.ListenableFuture<proto.DepartmentOuterClass.DepartmentResponse> getDepartment(
         proto.DepartmentOuterClass.DepartmentRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetDepartmentMethod(), getCallOptions()), request);
@@ -363,7 +363,7 @@ public final class DepartmentServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<proto.DepartmentOuterClass.Department> updateDepartment(
+    public com.google.common.util.concurrent.ListenableFuture<proto.DepartmentOuterClass.DepartmentResponse> updateDepartment(
         proto.DepartmentOuterClass.Department request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateDepartmentMethod(), getCallOptions()), request);
@@ -394,7 +394,7 @@ public final class DepartmentServiceGrpc {
       switch (methodId) {
         case METHODID_GET_DEPARTMENT:
           serviceImpl.getDepartment((proto.DepartmentOuterClass.DepartmentRequest) request,
-              (io.grpc.stub.StreamObserver<proto.DepartmentOuterClass.Department>) responseObserver);
+              (io.grpc.stub.StreamObserver<proto.DepartmentOuterClass.DepartmentResponse>) responseObserver);
           break;
         case METHODID_ADD_DEPARTMENT:
           serviceImpl.addDepartment((proto.DepartmentOuterClass.Department) request,
@@ -406,7 +406,7 @@ public final class DepartmentServiceGrpc {
           break;
         case METHODID_UPDATE_DEPARTMENT:
           serviceImpl.updateDepartment((proto.DepartmentOuterClass.Department) request,
-              (io.grpc.stub.StreamObserver<proto.DepartmentOuterClass.Department>) responseObserver);
+              (io.grpc.stub.StreamObserver<proto.DepartmentOuterClass.DepartmentResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -431,7 +431,7 @@ public final class DepartmentServiceGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               proto.DepartmentOuterClass.DepartmentRequest,
-              proto.DepartmentOuterClass.Department>(
+              proto.DepartmentOuterClass.DepartmentResponse>(
                 service, METHODID_GET_DEPARTMENT)))
         .addMethod(
           getAddDepartmentMethod(),
@@ -452,7 +452,7 @@ public final class DepartmentServiceGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               proto.DepartmentOuterClass.Department,
-              proto.DepartmentOuterClass.Department>(
+              proto.DepartmentOuterClass.DepartmentResponse>(
                 service, METHODID_UPDATE_DEPARTMENT)))
         .build();
   }

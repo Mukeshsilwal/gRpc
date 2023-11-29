@@ -17,7 +17,7 @@ public class DepartmentEndPoint extends DepartmentServiceGrpc.DepartmentServiceI
     }
 
     @Override
-    public void getDepartment(DepartmentOuterClass.DepartmentRequest request, StreamObserver<DepartmentOuterClass.Department> responseObserver) {
+    public void getDepartment(DepartmentOuterClass.DepartmentRequest request, StreamObserver<DepartmentOuterClass.DepartmentResponse> responseObserver) {
         super.getDepartment(request, responseObserver);
     }
 
@@ -36,7 +36,7 @@ public class DepartmentEndPoint extends DepartmentServiceGrpc.DepartmentServiceI
     }
 
     @Override
-    public void updateDepartment(DepartmentOuterClass.Department request, StreamObserver<DepartmentOuterClass.Department> responseObserver) {
+    public void updateDepartment(DepartmentOuterClass.Department request, StreamObserver<DepartmentOuterClass.DepartmentResponse> responseObserver) {
         super.updateDepartment(request, responseObserver);
     }
 }
