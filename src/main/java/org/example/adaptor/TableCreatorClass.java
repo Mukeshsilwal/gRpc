@@ -19,23 +19,24 @@ public class TableCreatorClass {
 
     public void tableCreator(){
         try(Connection connection=dataSource.getConnection()) {
-            String query="CREATE TABLE IF NOT EXISTS employee1("
+            String query = "CREATE TABLE IF NOT EXISTS depart ("
+                    + "id INT PRIMARY KEY,"
+                    + "name VARCHAR(255)"
+                    + ")";
+            String query1 = "CREATE TABLE IF NOT EXISTS project1 ("
+                    + "id INT PRIMARY KEY,"
+                    + "name VARCHAR(244)"
+                    + ")";
+            String query2 = "CREATE TABLE IF NOT EXISTS employ ("
                     + "id INT PRIMARY KEY,"
                     + "name VARCHAR(255),"
-                    + "email VARCHAR(255)"
+                    + "email VARCHAR(255),"
+                    + "department_id INT,"
+                    + "FOREIGN KEY (department_id) REFERENCES depart(id),"
+                    + "project_id INT,"
+                    + "FOREIGN KEY (project_id) REFERENCES project1(id)"
                     + ")";
-            String query1="CREATE TABLE IF NOT EXISTS department1("
-                    + "id INT PRIMARY KEY,"
-                    + "name VARCHAR(255),"
-                    +"employee_id int,"
-                    +"FOREIGN KEY(employee_id) REFERENCES employee1(id)"
-                    + ")";
-            String query2="CREATE TABLE IF NOT EXISTS project("
-                    +"id INT primary key,"
-                    + "name varchar(244) ,"
-                    +"employee_id int,"
-                    +"FOREIGN KEY(employee_id) REFERENCES employee1(id)"
-                    + ")";
+
             try(PreparedStatement statement= connection.prepareStatement(query)){
                 statement.executeUpdate();
             }

@@ -1,5 +1,0 @@
-syntax="proto3";
-package employeeManagement;
-import "department/Department.proto";
-import "employee/Employee.proto";
-import "project/Project.proto";

@@ -1,14 +1,14 @@
 package org.example.facade.facadeImpl;
 
-import employee.EmployeeOuterClass;
+
 import org.example.entity.Employee;
-import org.example.facade.EmployeeFacade;
 import org.example.service.EmployeeService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import proto.EmployeeOuterClass;
 
 @Service
-public class EmployeeFacadeImpl implements EmployeeFacade {
+public class EmployeeFacadeImpl{
     private final EmployeeService employeeService;
     private final ModelMapper modelMapper;
 
@@ -17,26 +17,35 @@ public class EmployeeFacadeImpl implements EmployeeFacade {
         this.modelMapper = modelMapper;
     }
 
-    @Override
+
     public void saveEmployee(EmployeeOuterClass.Employee employee) {
         Employee employee1=toEmployee(employee);
         employeeService.saveEmployee(employee1);
     }
 
-    @Override
+
     public EmployeeOuterClass.Employee getEmployee(EmployeeOuterClass.EmployeeRequest request) {
-        int id= request.getId();
-        Employee employee=employeeService.getEmployee(id);
-        return toOuterClass(employee);
+        int id=request.getId();
+        Employee employee1=employeeService.getEmployee(id);
+        if(employee1!=null){
+            return toOuterClass(employee1);
+        }
+        else{
+            throw new RuntimeException("Employee not found");
+        }
     }
 
-    @Override
+
     public EmployeeOuterClass.Employee updateEmployee(EmployeeOuterClass.Employee employee) {
-        return null;
+        Employee employee1=toEmployee(employee);
+        Employee employee2=employeeService.updateEmployee(employee1);
+        return toOuterClass(employee2);
     }
 
-    @Override
+
     public void deleteEmployee(EmployeeOuterClass.EmployeeRequest request) {
+        int id= request.getId();
+        employeeService.deleteEmployee(id);
 
     }
     public Employee toEmployee(EmployeeOuterClass.Employee employee){

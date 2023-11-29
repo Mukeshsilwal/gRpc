@@ -1,0 +1,26 @@
+syntax="proto3";
+package proto;
+import "Employee.proto";
+
+
+message Department{
+  int32 id=1;
+  string name=2;
+  repeated Employee employee=3;
+}
+message DepartmentRequest{
+  int32 id=1;
+}
+message DepartmentResponse{
+  Department department=1;
+}
+message deleteDataStatus{
+  string status=1;
+}
+
+service DepartmentService{
+  rpc getDepartment(DepartmentRequest) returns (Department);
+  rpc addDepartment(Department) returns (Department);
+  rpc deleteDepartment(DepartmentRequest) returns (deleteDataStatus);
+  rpc updateDepartment(Department) returns (Department);
+}

@@ -21,8 +21,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee getEmployee(int id) {
-        return query.getEmployee(id);
+    public Employee getEmployee(int employee) {
+        return query.getEmployee(employee);
     }
 
     @Override
