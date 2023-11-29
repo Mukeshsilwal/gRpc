@@ -1,0 +1,27 @@
+syntax="proto3";
+package project;
+import "employee/Employee.proto";
+
+message Project{
+  int32 id=1;
+  string name=2;
+  repeated employee.Employee employee=3;
+}
+message ProjectRequest{
+  int32 id=1;
+}
+message ProjectResponse{
+  Project project=1;
+}
+message saveDataStatus{
+  string status=1;
+}
+message deleteDataResponse{
+  string status=1;
+}
+service ProjectService{
+  rpc getProject(ProjectRequest) returns (Project);
+  rpc addProject(Project) returns (saveDataStatus);
+  rpc deleteProject(ProjectRequest) returns (deleteDataResponse);
+  rpc updateProject(Project) returns (Project);
+}

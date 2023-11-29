@@ -1,0 +1,28 @@
+syntax="proto3";
+package employee;
+
+message Employee{
+  int32 id=1;
+  string name=2;
+  string email=3;
+}
+
+message EmployeeRequest{
+  int32 id=1;
+}
+message saveEmployeeResponse{
+  string status=1;
+}
+message deleteEmployeeStatus{
+  string status=1;
+}
+message EmployeeResponse{
+  Employee employee=1;
+}
+
+service EmployeeService{
+  rpc getEmployee(EmployeeRequest) returns (Employee);
+  rpc addEmployee(Employee)  returns (saveEmployeeResponse);
+  rpc deleteEmployee(EmployeeRequest) returns (deleteEmployeeStatus);
+  rpc updateEmployee(Employee) returns (Employee);
+}
